@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="T7x-rp-iNs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yrc-Md-Rge" customClass="CustomControl" customModule="StarRating" customModuleProvider="target">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="updateRating:" destination="FUg-Tf-nZn" eventType="valueChanged" id="RKp-yK-Otx"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yrc-Md-Rge" firstAttribute="centerX" secondItem="T7x-rp-iNs" secondAttribute="centerX" id="Hiq-OI-YQa"/>
+                            <constraint firstItem="Yrc-Md-Rge" firstAttribute="centerY" secondItem="T7x-rp-iNs" secondAttribute="centerY" id="oMp-99-HqJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HLu-gj-hJq"/>
                     </view>
                     <navigationItem key="navigationItem" id="O9V-kS-J4d"/>
