@@ -18,7 +18,7 @@ class CustomControl: UIControl {
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchLocation = touch.location(in: self)
         if bounds.contains(touchLocation) {
-            sendActions(for: [.touchDragInside, .valueChanged])
+            sendActions(for: .touchDragInside)
             updateValue(at: touch)
         } else {
             sendActions(for: .touchDragOutside)
@@ -30,7 +30,7 @@ class CustomControl: UIControl {
         guard let touch = touch else { return }
         let touchLocation = touch.location(in: self)
         if bounds.contains(touchLocation) {
-            sendActions(for: [.touchUpInside, .valueChanged])
+            sendActions(for: .touchUpInside)
             updateValue(at: touch)
         } else {
             sendActions(for: .touchUpOutside)
@@ -42,7 +42,16 @@ class CustomControl: UIControl {
     }
     
     func updateValue(at touch: UITouch) {
-        
+        for label in labelsArray {
+            let touchLocation = touch.location(in: self)
+            if label.bounds.contains(touchLocation) {
+                value = label.tag
+                label.textColor = componentActiveColor
+                sendActions(for: .valueChanged)
+            } else {
+                label.textColor = componentInactiveColor
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,13 +66,13 @@ class CustomControl: UIControl {
             newLabel.frame.size = CGSize(width: componentDimension, height: componentDimension)
             
             let componentsWidth = CGFloat(number - 1) * componentDimension
-            
-            let xOrigin = CGFloat((Int(componentsWidth) + 8))
 
+            let xOrigin = CGFloat((Int(componentsWidth) + 8))
+            
             newLabel.frame.origin = CGPoint(x: xOrigin, y: 0)
             
             newLabel.font = UIFont(name: "bold system font", size: 32)
-            newLabel.text = "✰"
+            newLabel.text = "✪"
             
             if number == 1 {
                 newLabel.textColor = componentActiveColor
@@ -72,6 +81,7 @@ class CustomControl: UIControl {
             }
             self.addSubview(newLabel)
             labelsArray.append(newLabel)
+            print(labelsArray)
         }
     }
     

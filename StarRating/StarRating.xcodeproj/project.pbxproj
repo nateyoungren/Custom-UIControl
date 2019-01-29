@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		778164E922010F030083C6FB /* AnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778164E822010F030083C6FB /* AnimationExtension.swift */; };
 		77E943DF2200EC270031F778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E943DE2200EC270031F778 /* AppDelegate.swift */; };
 		77E943E12200EC270031F778 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E943E02200EC270031F778 /* ViewController.swift */; };
 		77E943E42200EC270031F778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E943E22200EC270031F778 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		778164E822010F030083C6FB /* AnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExtension.swift; sourceTree = "<group>"; };
 		77E943DB2200EC270031F778 /* StarRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E943DE2200EC270031F778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E943E02200EC270031F778 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				77E943E72200EC280031F778 /* LaunchScreen.storyboard */,
 				77E943EA2200EC280031F778 /* Info.plist */,
 				77E943F02200ECA40031F778 /* CustomControll.swift */,
+				778164E822010F030083C6FB /* AnimationExtension.swift */,
 			);
 			path = StarRating;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778164E922010F030083C6FB /* AnimationExtension.swift in Sources */,
 				77E943F12200ECA40031F778 /* CustomControll.swift in Sources */,
 				77E943E12200EC270031F778 /* ViewController.swift in Sources */,
 				77E943DF2200EC270031F778 /* AppDelegate.swift in Sources */,
