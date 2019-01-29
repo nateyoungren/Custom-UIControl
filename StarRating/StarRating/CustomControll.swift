@@ -69,9 +69,13 @@ class CustomControl: UIControl {
 
             let xOrigin = CGFloat((Int(componentsWidth) + 8))
             
+            newLabel.bounds = CGRect(x: xOrigin, y: 0, width: componentDimension, height: componentDimension)
+            
             newLabel.frame.origin = CGPoint(x: xOrigin, y: 0)
             
-            newLabel.font = UIFont(name: "bold system font", size: 32)
+            newLabel.clipsToBounds = true
+            
+            newLabel.font = UIFont.boldSystemFont(ofSize: 32)
             newLabel.text = "✪"
             
             if number == 1 {
@@ -80,6 +84,7 @@ class CustomControl: UIControl {
                 newLabel.textColor = componentInactiveColor
             }
             self.addSubview(newLabel)
+
             labelsArray.append(newLabel)
             print(labelsArray)
         }

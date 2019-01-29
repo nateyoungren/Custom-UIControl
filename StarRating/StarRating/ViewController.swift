@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         if ratingValue == 1 {
             title?.append("s")
         }
-    }
-    
+    }    
 }
 
