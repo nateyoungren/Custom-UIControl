@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     @IBAction func updateRating(_ ratingControl: CustomControl) {
         var title = self.title
-        let ratingValue = CustomControl().value
+        let ratingValue = ratingControl.value
         title = "User Rating: \(ratingValue) Star"
         if ratingValue == 1 {
             title?.append("s")
