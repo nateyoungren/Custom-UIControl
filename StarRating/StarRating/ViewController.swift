@@ -12,16 +12,16 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "Set Rating"
+        self.title = "User Rating: 1 Star"
     }
 
     @IBAction func updateRating(_ ratingControl: CustomControl) {
-        var title = self.title
         let ratingValue = ratingControl.value
-        title = "User Rating: \(ratingValue) Star"
-        if ratingValue == 1 {
-            title?.append("s")
+        self.title = "User Rating: \(ratingValue) Star"
+        if ratingValue != 1 {
+            self.title?.append("s")
         }
-    }    
+    }
+    
 }
 
