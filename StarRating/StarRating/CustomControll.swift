@@ -27,6 +27,8 @@ class CustomControl: UIControl {
     }
 
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        defer { super.endTracking(touch, with: event) }
+        
         guard let touch = touch else { return }
         let touchLocation = touch.location(in: self)
         if bounds.contains(touchLocation) {
@@ -60,23 +62,18 @@ class CustomControl: UIControl {
     }
     
     func setup() {
+
         for number in 1...5 {
             let newLabel = UILabel()
-            newLabel.tag = number
-            newLabel.frame.size = CGSize(width: componentDimension, height: componentDimension)
-            
             let componentsWidth = Int(CGFloat(number - 1) * componentDimension)
-
             let xOrigin = CGFloat(componentsWidth + (8 * number))
             
+            newLabel.tag = number
+            newLabel.frame.size = CGSize(width: componentDimension, height: componentDimension)
             newLabel.bounds = CGRect(x: xOrigin, y: 0, width: componentDimension, height: componentDimension)
-
             newLabel.frame.origin = CGPoint(x: xOrigin, y: 0)
-            
             newLabel.textAlignment = NSTextAlignment.center
-            
             newLabel.clipsToBounds = true
-            
             newLabel.font = UIFont.boldSystemFont(ofSize: 32)
             newLabel.text = "✪"
             
@@ -85,11 +82,11 @@ class CustomControl: UIControl {
             } else {
                 newLabel.textColor = componentInactiveColor
             }
+            
             self.addSubview(newLabel)
-
             labelsArray.append(newLabel)
-            print(labelsArray)
         }
+        
     }
     
     override var intrinsicContentSize: CGSize {
