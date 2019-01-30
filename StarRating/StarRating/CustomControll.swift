@@ -70,7 +70,7 @@ class CustomControl: UIControl {
             let xOrigin = CGFloat(componentsWidth + (8 * number))
             
             newLabel.bounds = CGRect(x: xOrigin, y: 0, width: componentDimension, height: componentDimension)
-            
+
             newLabel.frame.origin = CGPoint(x: xOrigin, y: 0)
             
             newLabel.textAlignment = NSTextAlignment.center
