@@ -65,13 +65,15 @@ class CustomControl: UIControl {
             newLabel.tag = number
             newLabel.frame.size = CGSize(width: componentDimension, height: componentDimension)
             
-            let componentsWidth = CGFloat(number - 1) * componentDimension
+            let componentsWidth = Int(CGFloat(number - 1) * componentDimension)
 
-            let xOrigin = CGFloat((Int(componentsWidth) + 8))
+            let xOrigin = CGFloat(componentsWidth + (8 * number))
             
             newLabel.bounds = CGRect(x: xOrigin, y: 0, width: componentDimension, height: componentDimension)
             
             newLabel.frame.origin = CGPoint(x: xOrigin, y: 0)
+            
+            newLabel.textAlignment = NSTextAlignment.center
             
             newLabel.clipsToBounds = true
             
